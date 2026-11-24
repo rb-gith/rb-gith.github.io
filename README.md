@@ -6,6 +6,7 @@ This repo is the front door: one page that lists all my apps, live at **https://
 
 | App | What it does |
 |---|---|
+| [Sfumato](https://rb-gith.github.io/sfumato/) | Colour wheel and palettes |
 | [Tasca](https://rb-gith.github.io/tasca/) | Shop cards in your pocket |
 | [Tempo](https://rb-gith.github.io/tempo/) | Hours per project |
 | [ELF](https://rb-gith.github.io/elf/) | Gift ideas for every occasion |
