@@ -1,6 +1,6 @@
 # gionzana · apps
 
-Little apps for everyday things: offline, no account, and your data stays on your phone.
+Little apps for everyday things: offline, no account, no ads, and your data stays on your phone.
 
 This repo is the front door: one page that lists all my apps, live at **https://rb-gith.github.io/**.
 

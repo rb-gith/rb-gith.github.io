@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>gionzana · apps</title>
-<meta name="description" content="Little apps for everyday things: offline, no account. Your data stays on your phone.">
+<meta name="description" content="Little apps for everyday things: offline, no account, no ads. Your data stays on your phone.">
 <meta name="theme-color" content="#f6f8fa">
 <meta name="color-scheme" content="light">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f6f8fa'/%3E%3Ctext x='29' y='46' font-family='Georgia,serif' font-size='40' text-anchor='middle' fill='%232E1A47'%3Eg%3C/text%3E%3Ccircle cx='50' cy='22' r='6' fill='%23F2994A'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f6f8fa'/%3E%3Ctext x='29' y='46' font-family='Georgia,serif' font-size='40' text-anchor='middle' fill='%232E1A47'%3Eg%3C/text%3E%3Ccircle cx='50' cy='40' r='6' fill='%23F2994A'/%3E%3C/svg%3E">
 <style>
   /* GitHub's light palette, with gionzana's purple and orange for the name and buttons. Light only. */
   :root {
@@ -37,6 +37,12 @@
   .logo-text span { color: var(--orange); }
   h1 { margin: 14px 0 4px; font-size: 20px; font-weight: 600; line-height: 1.3; }
   .promise { margin: 0; color: var(--muted); font-size: 14px; }
+  .coffee-top { margin: 12px 0 0; display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; font-size: 13px; color: var(--muted); }
+  .coffee-btn {
+    display: inline-flex; align-items: center; min-height: 36px; padding: 0 14px; border-radius: 6px;
+    background: var(--orange); color: var(--purple); font-size: 14px; font-weight: 600; text-decoration: none;
+  }
+  .coffee-btn:active { background: var(--orange-press); }
   .lang {
     position: absolute; top: 18px; right: 16px;
     font: inherit; font-size: 13px; color: var(--muted);
@@ -65,6 +71,9 @@
   .open:active { background: var(--orange-press); }
 
   .tip { margin: 18px 0 0; padding: 12px; background: var(--head); border: 1px solid var(--line); border-radius: 8px; font-size: 13px; color: var(--muted); }
+  .tip p { margin: 0 0 4px; }
+  .tip p:last-child { margin: 0; }
+  .tip b { color: var(--ink); font-weight: 600; }
 
   footer { padding: 22px 0 32px; text-align: center; font-size: 13px; color: var(--muted); }
   footer p { margin: 4px 0; }
@@ -77,13 +86,22 @@
          onerror="this.outerHTML='<div class=&quot;logo-text&quot;>gionzana<span>•</span></div>'">
     <button class="lang" id="lang" type="button" aria-label="Italiano">IT</button>
     <h1 data-t="tagline">Little apps for everyday things</h1>
-    <p class="promise" data-t="promise">Offline, no account. Your data stays on your phone.</p>
+    <p class="promise" data-t="promise">Offline, no account, no ads. Your data stays on your phone.</p>
+    <p class="coffee-top">
+      <a class="coffee-btn" href="https://buymeacoffee.com/gionzana" data-t="coffeeTop">☕ Buy me a coffee</a>
+      <span data-t="coffeeJoke">No ads, so these apps run on coffee</span>
+    </p>
   </div>
 </header>
 
 <main class="wrap">
   <ul class="apps" id="apps"></ul>
-  <p class="tip" data-t="tip">To install an app: open it in Chrome on your phone, tap ⋮ and choose “Install app”. It then works like any other app, even offline.</p>
+  <div class="tip">
+    <p data-t="tip">To install an app on your phone:</p>
+    <p><b>Android</b> · <span data-t="tipAndroid">open it in Chrome, tap ⋮ and choose “Install app”.</span></p>
+    <p><b>iPhone</b> · <span data-t="tipIphone">open it in Safari, tap the Share button (the square with an arrow) and choose “Add to Home Screen”.</span></p>
+    <p data-t="tipAfter">It then works like any other app, even offline.</p>
+  </div>
 </main>
 
 <footer class="wrap">
@@ -124,9 +142,14 @@
   var TEXT = {
     en: {
       tagline: 'Little apps for everyday things',
-      promise: 'Offline, no account. Your data stays on your phone.',
+      promise: 'Offline, no account, no ads. Your data stays on your phone.',
+      coffeeTop: '☕ Buy me a coffee',
+      coffeeJoke: 'No ads, so these apps run on coffee',
       open: 'Open',
-      tip: 'To install an app: open it in Chrome on your phone, tap ⋮ and choose “Install app”. It then works like any other app, even offline.',
+      tip: 'To install an app on your phone:',
+      tipAndroid: 'open it in Chrome, tap ⋮ and choose “Install app”.',
+      tipIphone: 'open it in Safari, tap the Share button (the square with an arrow) and choose “Add to Home Screen”.',
+      tipAfter: 'It then works like any other app, even offline.',
       madeBy: 'made by gionzana',
       coffee: '☕ buy me a coffee',
       codeOn: 'the code is on',
@@ -134,9 +157,14 @@
     },
     it: {
       tagline: 'Piccole app per le cose di tutti i giorni',
-      promise: 'Offline, senza account. I tuoi dati restano sul tuo telefono.',
+      promise: 'Offline, senza account, senza pubblicità. I tuoi dati restano sul tuo telefono.',
+      coffeeTop: '☕ Offrimi un caffè',
+      coffeeJoke: 'Niente pubblicità: queste app vanno a caffè',
       open: 'Apri',
-      tip: 'Per installare un’app: aprila in Chrome sul telefono, tocca ⋮ e scegli “Installa app”. Poi funziona come tutte le altre app, anche offline.',
+      tip: 'Per installare un’app sul telefono:',
+      tipAndroid: 'aprila in Chrome, tocca ⋮ e scegli “Installa app”.',
+      tipIphone: 'aprila in Safari, tocca il pulsante Condividi (il quadrato con la freccia) e scegli “Aggiungi alla schermata Home”.',
+      tipAfter: 'Poi funziona come tutte le altre app, anche offline.',
       madeBy: 'creata da gionzana',
       coffee: '☕ offrimi un caffè',
       codeOn: 'il codice è su',
